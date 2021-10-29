@@ -9,7 +9,7 @@ TEST
 const App = () => {
     return (
         <>
-            <View style={{paddingTop: Constants.statusBarHeight}}/>
+            <View style={{ paddingTop: Constants.statusBarHeight}}  />
             <View style={[styles.container, styles.playingSpace]}>
                 <Text> Hello </Text>
                 <Text> Hello </Text>
@@ -28,25 +28,25 @@ const App = () => {
             </View>
             <ScrollView style={[styles.container]}>
                 <View style={[styles.controlSpace]}>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="CHANGE FLEX DIRECTION"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="CHANGE JUSTIFY CONTENT"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="CHANGE ALIGN ITEMS"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="CHANGE DIRECTION"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="CHANGE FLEX WRAP"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="ADD SQUARE"/>
                     </View>
-                    <View style={[styles.buttonView]}>
+                    <View style={styles.ButtonView}>
                         <Button title="DELTE SQAURE"/>
                     </View>
 
@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
     ButtonView: {
             width:'50%',
             padding: 10,
-    },
+
+    },/*#f194ff*/
     tinyLogo: {
         width: 100,
         height: 100,
