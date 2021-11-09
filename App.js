@@ -1,16 +1,77 @@
 import React from "react";
 import {Image, Text, Button, ScrollView, View, StyleSheet } from "react-native";
 import Constants from 'expo-constants';
+import {useState, randomHexColor} from 'react-native';
+
 
 /*
 TEST
 */
 
 const App = () => {
+    const flexDirections = ['row', 'row-reverse', 'column', 'column-reverse' ];
+    const justifyContents = [
+        'flex-start',
+        'flex-end',
+        'center',
+        'space-between',
+        'space-around',
+        'space-evenly',
+    ];
+
+    const alignItemsArr = [
+        'flex-start',
+        'flex-end',
+        'center',
+        'stretch',
+        'baseline',
+      ];
+    
+    
+    const directions = ['inherit', 'ltr', 'rtl'];
+    const wraps = ['nowrap', 'wrap', 'wrap-reverse'];
+
+    const [flexDirection, setFlexDirection] = useState(0);
+    const [justifyContent, setJustifyContent] = useState(0);
+    const [alignItems, setAlignItems] = useState(0);
+    const [direction, setDirection] = useState(0);
+    const [wrap, setWrap] = useState(0);
+
+    const hookedStyles = {
+        flexDirection: flexDirections[flexDirection],
+        justifyContent: justifyContents[justifyContent], 
+        alignItems: alignItemsArr[alignItems],
+        direction: directions[direction],
+        wrap: wraps[wrap],
+
+    }
+    const changeSetting = (value, options, setterfunction) => {
+        if (value == options.length - 1) {
+            setterfunction(0);
+        } else {
+            setterfunction(value + 1);
+        };
+
+        console.log(options[value]);
+    }
+
+
+    const Square = () => {
+        const sqStyle = {
+            width: 50,
+            height: 50,
+            backgroundColor: randomHexColor(),
+        };
+        return <View style={sqStyle} />;
+        };
+
+        const [squares, setSquares] = useState([Square(), Square(), Square()]);
+
     return (
         <>
-            <View style={{ paddingTop: Constants.statusBarHeight}}  />
-            <View style={[styles.container, styles.playingSpace]}>
+            <View style={{ paddingTop: Constants.statusBarHeight}} />
+            <View style={[styles.container, styles.playingSpace, hookedStyles]}>
+            {squares.map(elem => elem)}
                 <Text> Hello </Text>
                 <Text> Hello </Text>
                 <Text> Hello </Text>
@@ -29,25 +90,63 @@ const App = () => {
             <ScrollView style={[styles.container]}>
                 <View style={[styles.controlSpace]}>
                     <View style={styles.ButtonView}>
-                        <Button title="CHANGE FLEX DIRECTION"/>
+                        <Button title="CHANGE FLEX DIRECTION"
+                            onPress={() => {
+                                console.log("press CHANGE FLEX DIRECTION");
+                                changeSetting(flexDirection, flexDirections, setFlexDirection);
+                            }}
+                        />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="CHANGE JUSTIFY CONTENT"/>
+                        <Button title="CHANGE JUSTIFY CONTENT"
+                            onPress={() => {
+                                console.log("press CHANGE JUSTIFY CONTENT");
+                                    changeSetting(justifyContent, justifyContents, setJustifyContent);
+                                }}
+                        />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="CHANGE ALIGN ITEMS"/>
+                        <Button title="CHANGE ALIGN ITEMS"
+                            onPress={() => {
+                                console.log("press CHANGE ALIGN ITEMS")
+                                    changeSetting(alignItems, alignItemsArr, setAlignItems);
+
+                                }}
+                        />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="CHANGE DIRECTION"/>
+                        <Button title="CHANGE DIRECTION"
+                            onPress={() => {
+                                console.log("press CHANGE DIRECTION")
+                                    changeSetting(direction, directions, setDirection);
+
+                                }}
+                    />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="CHANGE FLEX WRAP"/>
+                        <Button title="CHANGE FLEX WRAP"
+                            onPress={() => {
+                                console.log("press CHANGE FLEX WRAP")
+                                    changeSetting(wrap, wraps, setWrap);
+
+                          }}
+                  />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="ADD SQUARE"/>
+                        <Button title="ADD SQUARE"
+                            onPress={() =>
+                                console.log("press ADD SQAURE")
+
+                          }                        
+                        />
                     </View>
                     <View style={styles.ButtonView}>
-                        <Button title="DELTE SQAURE"/>
+                        <Button title="DELTE SQAURE"
+                            onPress={() =>
+                                console.log("press DELTE SQAURE")
+                          }                        
+                        
+                        />
                     </View>
 
 
@@ -85,4 +184,5 @@ const styles = StyleSheet.create({
 
 })
 
+//const randomHexColor = () -> 
 export default App;
