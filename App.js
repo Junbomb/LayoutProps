@@ -29,20 +29,20 @@ const App = () => {
     
     
     const directions = ['inherit', 'ltr', 'rtl'];
-    const wraps = ['nowrap', 'wrap', 'wrap-reverse'];
+    const flexwraps = ['nowrap', 'wrap', 'wrap-reverse'];
 
     const [flexDirection, setFlexDirection] = useState(0);
     const [justifyContent, setJustifyContent] = useState(0);
     const [alignItems, setAlignItems] = useState(0);
     const [direction, setDirection] = useState(0);
-    const [wrap, setWrap] = useState(0);
+    const [flexWrap, setWrap] = useState(0);
 
     const hookedStyles = {
         flexDirection: flexDirections[flexDirection],
         justifyContent: justifyContents[justifyContent], 
         alignItems: alignItemsArr[alignItems],
         direction: directions[direction],
-        wrap: wraps [wrap],
+        flexwrap: flexwraps [flexWrap],
 
     }
     const changeSetting = (value, options, setterfunction) => {
@@ -65,7 +65,7 @@ const App = () => {
         return <View style={sqStyle} />;
         };
 
-        const [squares, setSquares] = useState([Square(), Square(), Square()]);
+        const [squares, setSquares] = useState([Square(), Square(), Square(),Square(), Square(), Square()]);
 
     return (
         <>
@@ -115,25 +115,26 @@ const App = () => {
                         <Button title="CHANGE FLEX WRAP"
                             onPress={() => {
                                 console.log("press CHANGE FLEX WRAP")
-                                    changeSetting(wrap, wraps, setWrap);
+                                    changeSetting(flexWrap, flexwraps, setWrap);
 
                           }}
                     />
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="ADD SQUARE"
-                            onPress={() =>
+                            onPress={() => {
                                 console.log("press ADD SQAURE")
+                                setSquares([...squares, Square()]);
 
-                          }                        
+                        }}                        
                         />
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="DELTE SQAURE"
-                            onPress={() =>
-                                console.log("press DELTE SQAURE")
-                          }                        
-                        
+                            onPress={() => {
+                                console.log("press DELTE SQAURE");
+                                setSquares(squares.filter((v,i) => i != squares.length -1));
+                        }}
                         />
                     </View>
 
