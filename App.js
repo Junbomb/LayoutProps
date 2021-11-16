@@ -29,20 +29,20 @@ const App = () => {
     
     
     const directions = ['inherit', 'ltr', 'rtl'];
-    const flexwraps = ['nowrap', 'wrap', 'wrap-reverse'];
+    const flexWraps = ['nowrap', 'wrap', 'wrap-reverse'];
 
     const [flexDirection, setFlexDirection] = useState(0);
     const [justifyContent, setJustifyContent] = useState(0);
     const [alignItems, setAlignItems] = useState(0);
     const [direction, setDirection] = useState(0);
-    const [flexWrap, setWrap] = useState(0);
+    const [flexWraping, setFlexWrap] = useState(0);
 
     const hookedStyles = {
         flexDirection: flexDirections[flexDirection],
         justifyContent: justifyContents[justifyContent], 
         alignItems: alignItemsArr[alignItems],
         direction: directions[direction],
-        flexwrap: flexwraps [flexWrap],
+        flexWrap: flexWraps [flexWraping],
 
     }
     const changeSetting = (value, options, setterfunction) => {
@@ -115,7 +115,7 @@ const App = () => {
                         <Button title="CHANGE FLEX WRAP"
                             onPress={() => {
                                 console.log("press CHANGE FLEX WRAP")
-                                    changeSetting(flexWrap, flexwraps, setWrap);
+                                    changeSetting(flexWraping, flexWraps, setFlexWrap);
 
                           }}
                     />
