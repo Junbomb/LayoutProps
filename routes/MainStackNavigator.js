@@ -13,14 +13,13 @@ function MainStackNavigator() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='Home'
+                initialRouteName='Hell'
             >
                 <Stack.Screen
                     name = "Home"
                     component={Home}
                     options={{title:'Home Screen'}}
                 />
-
                 <Stack.Screen
                     name = "Layout"
                     component={Layout}
