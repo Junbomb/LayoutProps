@@ -1,17 +1,46 @@
 import React from "react";
-import { Text, Button } from "react-native";
+import { View, Text, Button, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 
 function Home({navigation}) {
     return (
         <>
-        <Text> Hello Home</Text>
-        <Button
-            title="GO TO LAYOUT"
-            onPress={()=>navigation.navigate('Layout')}
-            />
+
+            <View style={styles.container}>
+                <Image
+                    source={require('../assets/frog-1371919.jpg')}
+                    style={{height:400, width:400}}
+                />
+            
+            <TouchableOpacity
+                    style={styles.buttonContainer}
+                    onPress={()=>navigation.navigate('Layout') }
+                >
+                    <Text style={styles.buttonText}>Go To Home</Text>
+            </TouchableOpacity>
+        </View>
+
         </>
     );
 }
+
+const styles = StyleSheet.create({
+    buttonContainer: {
+        backgroundColor: 'black',
+        borderRadius: 5,
+        padding:10,
+        margin:20
+    },
+    buttonText: {
+        fontSize:20,
+        color:'#fff'
+    },
+    container: {
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:'#ebebeb'
+}
+})
 
 export default Home;

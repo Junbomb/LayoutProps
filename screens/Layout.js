@@ -9,6 +9,7 @@ TEST
 */
 
 const App = () => {
+
     const flexDirections = ['row', 'row-reverse', 'column', 'column-reverse' ];
     const justifyContents = [
         'flex-start',
@@ -36,6 +37,7 @@ const App = () => {
     const [alignItems, setAlignItems] = useState(0);
     const [direction, setDirection] = useState(0);
     const [flexWraping, setFlexWrap] = useState(0);
+
 
     const hookedStyles = {
         flexDirection: flexDirections[flexDirection],
@@ -83,7 +85,10 @@ const App = () => {
                                 console.log("press CHANGE FLEX DIRECTION");
                                 changeSetting(flexDirection, flexDirections, setFlexDirection);
                             }}
+                        
                         />
+                        <Text style={styles.buttonText}>{flexDirections[flexDirection]}</Text>
+
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="CHANGE JUSTIFY CONTENT"
@@ -92,6 +97,8 @@ const App = () => {
                                     changeSetting(justifyContent, justifyContents, setJustifyContent);
                                 }}
                         />
+                        <Text style={styles.buttonText}>{justifyContents[justifyContent]}</Text>
+                        
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="CHANGE ALIGN ITEMS"
@@ -101,6 +108,8 @@ const App = () => {
 
                                 }}
                         />
+                        <Text style={styles.buttonText}>{alignItemsArr[alignItems]}</Text>
+
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="CHANGE DIRECTION"
@@ -110,6 +119,8 @@ const App = () => {
 
                                 }}
                     />
+                        <Text style={styles.buttonText}>{directions[direction]}</Text>
+
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="CHANGE FLEX WRAP"
@@ -119,6 +130,8 @@ const App = () => {
 
                           }}
                     />
+                        <Text style={styles.buttonText}>{flexWraps[flexWraping]}</Text>
+
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="ADD SQUARE"
@@ -128,6 +141,7 @@ const App = () => {
 
                         }}                        
                         />
+
                     </View>
                     <View style={styles.ButtonView}>
                         <Button title="DELTE SQAURE"
@@ -136,6 +150,16 @@ const App = () => {
                                 setSquares(squares.filter((v,i) => i != squares.length -1));
                         }}
                         />
+                    </View>
+                    <View style={[styles.ButtonView]}>
+                        <Button title="GO TO HOME"
+                        onPress={()=> {
+                            console.log("press Home");
+                            navigation.navigate('Home')
+                        }
+
+                    }
+                    />
                     </View>
 
 
@@ -155,6 +179,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderColor: 'blue',
         borderWidth: 3,
+
     },
     controlSpace: {
         flexDirection: 'row',
@@ -164,12 +189,13 @@ const styles = StyleSheet.create({
     ButtonView: {
             width:'50%',
             padding: 10,
+            alignItems: "center"
 
     },/*#f194ff*/
     tinyLogo: {
         width: 100,
         height: 100,
-    }
+    },
 
 })
 
