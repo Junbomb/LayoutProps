@@ -24,6 +24,11 @@ function MainTabNavigator() {
                     component={Layout}
                     options={{title:'layout Screen'}}
                 />
+                <Nav.Screen
+                    name = "Hell"
+                    component={Hell}
+                    options={{title:'Welcome Hell'}}
+                />
 
                 
             </Nav.Navigator>
