@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Layout from '../screens/Layout' ;
 import Hell from '../screens/Hell';
+import Weather from '../screens/Weather';
+
 
 const Nav = createBottomTabNavigator();
 
@@ -28,6 +30,11 @@ function MainTabNavigator() {
                     name = "Hell"
                     component={Hell}
                     options={{title:'Welcome Hell'}}
+                />
+                <Nav.Screen
+                    name = "Weather"
+                    component={Weather}
+                    options={{title:'Weather Screen'}}
                 />
 
                 
