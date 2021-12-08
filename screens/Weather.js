@@ -66,7 +66,7 @@ render() {
         <View style={styles.container}>
             <View style={styles.halfcontainer}>
                 <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={128} color="black" />
-                <Text style={styles.temptitile}>{temp}'C</Text>
+                <Text style={styles.temptitile}>{temp}℃</Text>
             </View>
         </View>
 
