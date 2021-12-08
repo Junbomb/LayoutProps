@@ -16,7 +16,7 @@ function Home({navigation}) {
                     style={styles.buttonContainer}
                     onPress={()=>navigation.navigate('Layout') }
                 >
-                    <Text style={styles.buttonText}>Go To Home</Text>
+                    <Text style={styles.buttonText}>Go To Layout</Text>
             </TouchableOpacity>
         </View>
 
