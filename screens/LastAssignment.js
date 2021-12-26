@@ -3,7 +3,6 @@ import {Text, Alert, StyleSheet, View, Image, TouchableOpacity, ImageBackground}
 import * as Location from 'expo-location';
 import Axios from 'axios';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Constants from 'expo-constants';
 
 
 const apiKey = process.env.REACT_APP_WEATHER_KEY;
@@ -21,9 +20,7 @@ const weatherOptions = {
 
 }
 
-
 export default class Weather extends React.Component {
-        
 
     state = {
         cond : "Clear"
@@ -62,97 +59,97 @@ export default class Weather extends React.Component {
     }
 
 
-render() {
-    const onPressTitle = () => {
-        setTitleText("어쩔티비");
-    }
-    const {cond, temp, icon} = this.state;
-
-
-    return (
-        <>
-        <View style={styles.image}>
-            <ImageBackground source={require('../assets/snow.gif')}  style={styles.image}>
-            <View style={styles.container}>
-            <Text style={styles.title}>
-                오늘 날씨 어때?
-            </Text>
-
-        </View>
-        <View style={styles.container}>
-                <Image
-                    source={require('../assets/weather.jpg')}
-                    style={{height:100, width:300, paddingTop: 100}}
-                />
-        </View>
-
-        <View style={styles.container}>
-            <View style={styles.halfcontainer}>
-                <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={128} color="black" />
-                <Text style={styles.temptitile}>{temp}℃</Text>
+    render() {
+    
+        const {cond, temp, icon} = this.state;
+    
+    
+        return (
+            <>
+            <View style={styles.image}>
+                <ImageBackground source={require('../assets/snow.gif')}  style={styles.image}>
+                <View style={styles.container}>
+                <Text style={styles.title}>
+                    오늘 날씨 어때?
+                </Text>
+    
             </View>
-            
-            <TouchableOpacity
-                    style={styles.buttonContainer}
-                >
-            <Text style={styles.buttonText}>혹시 너무 춥다면 클릭!</Text>
-            </TouchableOpacity>
-        </View>
-
-
+            <View style={styles.container}>
+                    <Image
+                        source={require('../assets/weather.jpg')}
+                        style={{height:100, width:300, paddingTop: 100}}
+                    />
+            </View>
+    
+            <View style={styles.container}>
+                <View style={styles.halfcontainer}>
+                    <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={128} color="black" />
+                    <Text style={styles.temptitile}>{temp}℃</Text>
+                </View>
                 
-            </ImageBackground>
-        </View>
-
-        
-
-
-        </>
-        
-    );
-
-}
-
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex : 1,
-        alignItems: "center"
-
-    },
-    halfcontainer: {
-        flex : 1,
-        justifyContent: "center",
-        alignItems: "center"
-
-    },
-    temptitle: {
-        fontSize : 24
-        
-
-    },
-    title: {
-        color: '#212121',
-        fontSize: 50,
-        fontWeight: '600',
-        
-    },
-    buttonContainer: {
-        backgroundColor: 'blue',
-        borderRadius: 5,
-        padding:10,
-        margin:20
-    },
-
-    buttonText: {
-        fontSize:20,
-        color:'#fff'
-    },
-    image : {
-        width: '100%',
-        height: '100%'
-
+                <TouchableOpacity
+                        style={styles.buttonContainer}
+                        onPress={()=>alert('어쩔티비') }
+                    >
+                <Text style={styles.buttonText}>혹시 너무 춥다면 클릭!</Text>
+                </TouchableOpacity>
+            </View>
+    
+    
+                    
+                </ImageBackground>
+            </View>
+    
+            
+    
+    
+            </>
+            
+        );
+    
     }
     
-})
+    }
+    
+    const styles = StyleSheet.create({
+        container: {
+            flex : 1,
+            alignItems: "center"
+    
+        },
+        halfcontainer: {
+            flex : 1,
+            justifyContent: "center",
+            alignItems: "center"
+    
+        },
+        temptitle: {
+            fontSize : 24
+            
+    
+        },
+        title: {
+            color: '#212121',
+            fontSize: 50,
+            fontWeight: '600',
+            
+        },
+        buttonContainer: {
+            backgroundColor: 'blue',
+            borderRadius: 5,
+            padding:10,
+            margin:20
+        },
+    
+        buttonText: {
+            fontSize:20,
+            color:'#fff'
+        },
+        image : {
+            width: '100%',
+            height: '100%'
+    
+        }
+        
+    })
+    
