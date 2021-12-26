@@ -2,10 +2,13 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Home from '../screens/Home';
 import Layout from '../screens/Layout' ;
 import Hell from '../screens/Hell';
 import Weather from '../screens/Weather';
+import LastAssignment from '../screens/LastAssignment';
+
 
 
 const Nav = createBottomTabNavigator();
@@ -35,6 +38,11 @@ function MainTabNavigator() {
                     name = "Weather"
                     component={Weather}
                     options={{title:'Weather Screen'}}
+                />
+                <Nav.Screen
+                    name = "LastAssignment"
+                    component={LastAssignment}
+                    options={{title:'LastAssignment'}}
                 />
 
                 

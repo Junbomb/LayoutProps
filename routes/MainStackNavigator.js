@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Layout from '../screens/Layout';
 import Home from '../screens/Home';
 import Hell from '../screens/Hell';
+import LastAssignment from '../screens/LastAssignment';
+
 
 
 const Stack = createStackNavigator();
@@ -29,6 +31,11 @@ function MainStackNavigator() {
                     name = "Hell"
                     component={Hell}
                     options={{title:'Hell Screen'}}
+                />
+                <Stack.Screen
+                    name = "LastAssignment"
+                    component={LastAssignment}
+                    options={{title:'LastAssignment Screen'}}
                 />
                 
             </Stack.Navigator>

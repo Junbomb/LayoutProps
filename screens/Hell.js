@@ -5,11 +5,11 @@ import { Text, Button } from "react-native";
 function Hell({navigation}) {
     return (
         <>
-        <Text> Welcome Hell </Text>
-        <Text> Welcome Hell </Text>
-        <Text> Welcome Hell </Text>
-        <Text> Welcome Hell </Text>
-        <Text> Welcome Hell </Text>
+        <Text> 여긴 따뜻해요 </Text>
+        <Text> 여긴 따뜻해요 </Text>
+        <Text> 여긴 따뜻해요 </Text>
+        <Text> 여긴 따뜻해요 </Text>
+        <Text> 여긴 따뜻해요 </Text>
 
         <Button
             title="GO TO Home"
