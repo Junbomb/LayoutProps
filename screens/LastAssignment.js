@@ -74,12 +74,6 @@ export default class Weather extends React.Component {
                 </Text>
     
             </View>
-            <View style={styles.container}>
-                    <Image
-                        source={require('../assets/weather.jpg')}
-                        style={{height:100, width:300, paddingTop: 100}}
-                    />
-            </View>
     
             <View style={styles.container}>
                 <View style={styles.halfcontainer}>
@@ -93,6 +87,13 @@ export default class Weather extends React.Component {
                     >
                 <Text style={styles.buttonText}>혹시 너무 춥다면 클릭!</Text>
                 </TouchableOpacity>
+            </View>
+
+            <View style={styles.container}>
+                    <Image
+                        source={require('../assets/weather.jpg')}
+                        style={{height:100, width:300, paddingTop: 100}}
+                    />
             </View>
     
     
