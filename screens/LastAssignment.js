@@ -92,7 +92,7 @@ export default class Weather extends React.Component {
             <View style={styles.container}>
                     <Image
                         source={require('../assets/weather.jpg')}
-                        style={{height:100, width:300, paddingTop: 100}}
+                        style={{height:100, width:400, paddingTop: 100}}
                     />
             </View>
     
@@ -130,8 +130,9 @@ export default class Weather extends React.Component {
     
         },
         title: {
-            color: '#212121',
-            fontSize: 50,
+            paddingTop: 50,
+            color: 'blue',
+            fontSize: 60,
             fontWeight: '600',
             
         },
